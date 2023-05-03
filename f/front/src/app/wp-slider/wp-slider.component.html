@@ -1,0 +1,17 @@
+<div class="slider-middle">
+  <div class="slides" [ngStyle]="{'transform': 'translateX(-' + currentSlide*100 + '%)'}">
+    <div class="slide" *ngFor="let slide of slides; let i = index" [class.s1]="i===0">
+      <img [src]="slide.src" [alt]="slide.alt" width="1520" height="740">
+    </div>
+  </div>
+
+  <div class="navigation">
+    <button (click)="prevSlide()">&lt;</button>
+    <label *ngFor="let slide of slides; let i = index" [for]="'r'+i" class="bar"></label>
+    <button (click)="nextSlide()">&gt;</button>
+  </div>
+
+<!--  <div class="radio-buttons">-->
+<!--    <input type="radio" name="r" [id]="'r'+i" [checked]="i===0" (click)="currentSlide=i" *ngFor="let slide of slides; let i = index">-->
+<!--  </div>-->
+</div>

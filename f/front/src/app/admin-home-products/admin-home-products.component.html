@@ -1,0 +1,8 @@
+
+<h1>Products</h1>
+<button [routerLink]="['/admin-add-products/', category]">Add Products</button>
+
+<div class="category" *ngFor="let cat of products">
+  <a [routerLink]="['/products', cat.id]"> <img src="{{cat.logo}}"> <p>{{cat.title}}</p></a>
+  <button type="button" (click)="deleteProduct(cat.id)">Delete Category</button>
+</div>

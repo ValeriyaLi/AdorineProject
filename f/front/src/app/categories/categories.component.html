@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let category of categories">
+   <a [title]="category.title + ' details'" [routerLink]="['/categories/', category.id]">  <img src="{{category.logo}}">
+     <p> {{category.title}}</p> </a>
+  </li>
+</ul>
+
+

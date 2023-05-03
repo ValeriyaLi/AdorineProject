@@ -1,0 +1,15 @@
+<div *ngIf="product" class="product-details">
+  <img src="{{product.logo}}" width="600" height="600" alt="{{product.title}} Logo">
+  <div class="info">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.description }}</p>
+    <h4>Price: {{ product.price }}</h4>
+    <div *ngIf="!isAuthorized">
+      <a [routerLink]="['/login']"><button>Add</button></a>
+    </div>
+    <div *ngIf="isAuthorized && !isSuperuser" >
+      <button (click)="addToCart(product.id)">Add</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,11 @@
+<h1>Categories</h1>
+<button [routerLink]="['/admin-add']">Add Category</button>
+<div class="logout">
+  <button (click)="logout()">log Out</button>
+</div>
+
+<div class="category" *ngFor="let cat of categories">
+  <a [routerLink]="['/admin-home/categories/', cat.id]"> <img src="{{cat.logo}}"> <p>{{cat.title}}</p></a>
+  <button type="button" (click)="deleteCategory(cat.id)">Delete Category</button>
+</div>
+

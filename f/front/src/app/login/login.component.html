@@ -1,0 +1,24 @@
+<ng-container >
+  <h2>Login form</h2>
+  <div>
+    <div *ngIf="loginError">Wrong username or password. Please try again.</div>
+    <fieldset class="form">
+      <label>Username: </label>
+      <input type="text" [(ngModel)]="username">
+    </fieldset>
+    <fieldset class="form">
+      <label>Password: </label>
+      <input type="password" [(ngModel)]="password">
+    </fieldset>
+    <a> <button type="submit" (click)="login()">Login</button></a>
+  </div>
+  <div>
+    <p>Do not have an account?</p>
+    <a class="reg"[routerLink]="['/registration']">Register</a>
+  </div>
+</ng-container>
+<!--<ng-container *ngIf="logged" >-->
+<!--  <a [routerLink]="['']"> <button (click)="logout()">Log Out</button></a>-->
+<!--</ng-container>-->
+
+

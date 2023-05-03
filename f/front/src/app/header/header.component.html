@@ -1,0 +1,25 @@
+<header>
+  <div class="logo">
+    <a [routerLink]="['']"><img src="assets/logo3.png" alt="Company Logo"></a>
+  </div>
+  <nav class="info">
+    <p>Official store</p>
+  </nav>
+  <nav>
+    <ul>
+      <li><a [routerLink]="['/categories']">Catalog</a></li>
+    </ul>
+  </nav>
+  <div class="user-home" *ngIf="!isAuthorized">
+    <a [routerLink]="['/login']"><img src="assets/user.png" alt="User Icon"></a>
+  </div>
+  <div class="user-home" *ngIf="isAuthorized">
+    <div class="user-home" *ngIf="!isSuperuser">
+      <a [routerLink]="['/cart']"><img src="assets/cart1.png" alt="User Icon"></a>
+    </div>
+    <a (click)="home()"><img src="assets/user.png" alt="User Icon"></a>
+    <a (click)="home()">Home</a>
+  </div>
+</header>
+
+

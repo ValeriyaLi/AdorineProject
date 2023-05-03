@@ -1,0 +1,65 @@
+.sign-up {
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.sign-up-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.input-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.input-element {
+  position: relative;
+  border: none;
+}
+
+.input-element input[type="text"],
+.input-element input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.input-element input[type="file"] {
+  border: none;
+}
+
+.input-error {
+  color: red;
+  display: none;
+}
+
+input:focus + .input-error {
+  display: block;
+}
+
+button[type="submit"] {
+  background-color: #ecad81;
+  color: #000;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #f44336;
+  color: #fff;
+}

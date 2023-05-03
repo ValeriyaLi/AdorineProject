@@ -1,0 +1,24 @@
+<ng-container *ngIf="logged" >
+  <a [routerLink]="['']"> <button class="logout"(click)="logout()">Log Out</button></a>
+</ng-container>
+<div class="container">
+  <form [formGroup]="forma">
+    <div class="form-group">
+      <label for="country">Country</label>
+      <textarea type="text" class="form-control" id="country" formControlName="country"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <textarea class="form-control" id="city" formControlName="city"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <textarea class="form-control" id="street" formControlName="street"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="house">House</label>
+      <input type="number" class="form-control" id="house" formControlName="house">
+    </div>
+    <button type="submit" (click)="save()">Save</button>
+  </form>
+</div>

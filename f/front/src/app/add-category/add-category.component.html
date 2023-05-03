@@ -1,0 +1,39 @@
+<div class="sign-up">
+  <div class="sign-up-header">
+    <h1>Add Category</h1>
+  </div>
+  <form [formGroup]="form" (submit)="submit()">
+    <div class="input-container">
+      <label class="input-label" for="title"> Category Name:</label>
+      <div class="input-element">
+        <input formControlName="title" type="text" id="title" name="title" required>
+      </div>
+    </div>
+    <div class="input-error">
+      <span>Please enter a category name</span>
+    </div>
+    <div class="input-container">
+      <label class="input-label" for="logo">Logo:</label>
+      <div class="input-element">
+        <div class="left-icon">
+        </div>
+        <input formControlName="logo" id="logo" name="logo" type="file" (change)="onLogoSelect($event)" required>
+      </div>
+    </div>
+    <div class="input-error">
+      <span>Please enter a logo</span>
+    </div>
+    <button type="submit" (click)="submit()">Create</button>
+  </form>
+</div>
+
+<!--<p>add-category works!</p>-->
+<!--<form method="POST" action="/categories/create" enctype="multipart/form-data">-->
+<!--  <label for="title">Title:</label>-->
+<!--  <input type="text" id="title" name="title" required [(ngModel)]="title" >-->
+
+<!--&lt;!&ndash;  <label for="logo">Logo/Photo:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;  <input type="file" id="logo" name="logo" accept="image/*" [(ngModel)]="logo">&ndash;&gt;-->
+
+<!--  <button type="submit" (click)="addCategory()">Create Category</button>-->
+<!--</form>-->

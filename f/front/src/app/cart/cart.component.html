@@ -1,0 +1,85 @@
+<div>
+  <h3 class="order-heading">Оформление заказа</h3>
+  <div class="product-list">
+    <div *ngFor="let prod of products" class="product-box">
+      <a [routerLink]="['/products/', prod.id]">
+        <img src="http://localhost:8000{{prod.logo}}">
+        <p>{{prod.title}} - {{prod.price}}tg</p>
+      </a>
+      <button class="del" (click)="deleteFromCart(prod.id)">x</button>
+    </div>
+  </div>
+  <p>Overall: {{price}}</p>
+</div>
+
+
+<!--<h3>Оформление заказа</h3>-->
+
+<!--<div *ngFor="let prod of products">-->
+<!--  <img [src]="prod.logo_url" width="600" height="600" alt="{{prod.title}} Logo">-->
+<!--  {{prod.title}} - {{prod.description}} - {{prod.price}}-->
+<!--</div>-->
+
+<!--<div class="cart-item" *ngFor="let item of items">-->
+<!--  <h4>Ваш заказ</h4>-->
+<!--  <span>{{ item.title }} </span>-->
+<!--</div>-->
+
+
+
+<!--<div class="personal-info">-->
+<!--  <h4>Укажите ваши данные</h4>-->
+<!--  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">-->
+<!--    <div class="name-field">-->
+<!--      <label for="name">Имя</label>-->
+<!--      <input id="name" type="text" formControlName="name">-->
+<!--    </div>-->
+
+<!--    <div class="name-field">-->
+<!--      <label for="phone">Номер телефона</label>-->
+<!--      <input id="phone" type="tel" formControlName="address">-->
+<!--    </div>-->
+
+<!--    <div class="name-field">-->
+<!--      <label for="email">Email</label>-->
+<!--      <input id="email" type="email" formControlName="address">-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
+
+<!--<div class="delivery-details">-->
+<!--  <h4>Детали доставки</h4>-->
+<!--  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">-->
+<!--    <div class="city-list">-->
+<!--      <label for="name">Выберите город</label>-->
+<!--      <select id="city" name="city">-->
+<!--        <option value="">Select a city</option>-->
+<!--        <option value="almaty">Алматы</option>-->
+<!--        <option value="astana">Астана</option>-->
+<!--        <option value="atyrau">Атырау</option>-->
+<!--        <option value="semey">Семей</option>-->
+<!--        <option value="taraz">Тараз</option>-->
+<!--        <option value="shymkent">Шымкент</option>-->
+<!--        <option value="kyzylorda">Кызылорда</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    <div class="address-info">-->
+<!--      <label for="street">Улица</label>-->
+<!--      <input id="street" type="text" formControlName="street">-->
+<!--    </div>-->
+
+<!--    <div class="address-info">-->
+<!--      <label for="house">Дом</label>-->
+<!--      <input id="house" type="text" formControlName="house">-->
+<!--    </div>-->
+
+<!--    <div class="address-info">-->
+<!--      <label for="f-num">Квартира</label>-->
+<!--      <input id="f-num" type="text" formControlName="f-num">-->
+<!--    </div>-->
+
+<!--  </form>-->
+<!--</div>-->
+
+<!--<button class="button" type="submit">Оформить заказ</button>-->

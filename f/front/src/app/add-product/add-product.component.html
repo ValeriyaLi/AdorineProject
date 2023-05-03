@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2>Add Product</h2>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" formControlName="title">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" formControlName="description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="number" class="form-control" id="price" formControlName="price">
+        </div>
+
+        <div class="form-group">
+          <label for="logo">Logo</label>
+          <input type="file" class="form-control-file" id="logo" (change)="onLogoSelect($event)">
+        </div>
+        <button type="submit" (click)="submit()">Add Product</button>
+      </form>
+    </div>
+  </div>
+</div>

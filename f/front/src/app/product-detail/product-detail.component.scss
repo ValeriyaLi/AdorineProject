@@ -1,0 +1,32 @@
+body{
+  font-family: 'Raleway', sans-serif;
+}
+.product-details {
+  display: flex;
+}
+
+.product-details img {
+  width: 600px;
+  height: 600px;
+}
+
+.product-details .info {
+  margin-left: 100px;
+  margin-top: 250px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 0;
+  color: #777;
+}
