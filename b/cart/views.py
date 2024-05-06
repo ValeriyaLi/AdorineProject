@@ -6,11 +6,9 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from products.models import Product
-from . import serializers, models
+from orders.models import Order, OrderItem
 from .models import UserCart
 from .serializers import CartSerializer
-from products.serializers import ProductSerializer
 
 
 class CartViewSet(ModelViewSet):
@@ -18,6 +16,18 @@ class CartViewSet(ModelViewSet):
     queryset = UserCart.objects.all()
     permission_classes = (IsAuthenticated,)
 
+    @action(detail=False, methods=['get'])
+    def process_order(self, request, *args, **kwargs):
+        order = Order.objects.create(user=request.user)
+        cart_instances = UserCart.objects.filter(user=request.user)
+        for instance in cart_instances:
+            OrderItem.objects.create(
+                order=order,
+                product=instance.product,
+                amount=instance.product.price,
+            )
+        _clear_cart(request.user.id)
+        return Response(status=status.HTTP_200_OK)
     # @action(detail=True, methods=['DELETE'])
     # def remove_from_cart(self, request, pk=None):
     #     cart_item = self.get_object()
@@ -56,3 +66,8 @@ class CartViewSet(ModelViewSet):
     # def get_queryset(self):
     #     user = self.request.user
     #     return UserCart.objects.filter(user=user)
+
+
+def _clear_cart(user_id: int):
+    UserCart.objects.filter(user_id=user_id).delete()
+

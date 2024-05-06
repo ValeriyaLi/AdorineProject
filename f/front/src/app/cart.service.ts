@@ -33,6 +33,10 @@ export class CartService {
     return this.client.get<UserCart[]>(`${this.BASE_URL}`)
   }
 
+  processOrder() {
+    return this.client.get(`${this.BASE_URL}process_order/`)
+  }
+
   // getProduct(product_id: number): Observable<Product>{
   //   return this.client.get<Product>(`${this.BASE_URL}/products/${product_id}/`)
   // }

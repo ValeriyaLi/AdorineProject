@@ -56,4 +56,10 @@ export class CartComponent implements OnInit {
       alert("Product not found in cart.");
     }
   }
+
+  processOrder() {
+    this.cartService.processOrder().subscribe(() => {
+      this.carts = [];
+    });
+  }
 }
